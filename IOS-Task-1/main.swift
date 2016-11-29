@@ -18,5 +18,3 @@ studentdb.addStudent(student: b)
 
 studentdb.printDB()
 
-print("Hello, World!")
-
