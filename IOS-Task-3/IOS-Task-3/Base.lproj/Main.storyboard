@@ -73,7 +73,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="80" id="Gry-oH-ArV">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gry-oH-ArV" id="jqP-DM-YHG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -89,6 +89,7 @@
                             <outlet property="delegate" destination="psK-nH-L7x" id="qml-0V-4ck"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="kOh-c6-2U7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UO3-xF-4Xu">
                             <connections>
@@ -96,6 +97,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odn-JY-IHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
