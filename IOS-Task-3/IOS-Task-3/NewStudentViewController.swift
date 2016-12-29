@@ -8,8 +8,23 @@
 
 import UIKit
 
-class NewStudentViewController: UIViewController {
+protocol StudentDetialsEnteredDelegate {
+    func userDidEnterInformation(firstName: String, lastName: String, id: String, phone: String)
+}
 
+class NewStudentViewController: UIViewController {
+    
+    var delegate:StudentDetialsEnteredDelegate? = nil
+    
+
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    @IBOutlet weak var StudentIdTextField: UITextField!
+    
+    @IBOutlet weak var phoneTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +36,32 @@ class NewStudentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveStudent(_ sender: Any) {
+        if (delegate != nil) {
+            if (firstNameTextField.text != nil && lastNameTextField.text != nil) {
+                
+                let firstName = firstNameTextField.text
+                let lastName = lastNameTextField.text
+                let id = StudentIdTextField.text
+                let phone = phoneTextField.text
+                
+                delegate?.userDidEnterInformation(firstName: firstName! , lastName: lastName!, id: id!, phone: phone!)
+                
+                _ = self.navigationController?.popViewController(animated: true)
+                
+            }
+                 
+        }
+        
     }
-    */
+
+    @IBAction func clearUserInput(_ sender: Any) {
+        firstNameTextField.text = nil
+        lastNameTextField.text = nil
+        StudentIdTextField.text = nil
+        phoneTextField.text = nil
+    }
+    
+
 
 }
